@@ -1,0 +1,281 @@
+
+/*pets styles*/
+
+.dragon {
+    background-image: url("../img/dragon2.png");
+}
+
+.cat {
+    background-image: url("../img/cat.png");
+}
+
+.poo {
+    background-image: url("../img/poo.png");
+}
+
+.animation {
+    animation: wiggle 3s linear infinite;
+}
+
+
+div[id='pet'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: auto;
+    right: auto;
+}
+
+/*animal*/
+
+.animal {
+    width: 120px;
+    height: 140px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@keyframes wiggle {
+    0%, 50% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes play {
+    0% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateY(-60px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(20px) rotate(0deg);
+    }
+
+    35%, 55% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    60% {
+        transform: translateY(-20px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-20px) rotate(360deg);
+    }
+}
+
+@keyframes walk {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-100%);
+    }
+
+    75% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes eat {
+    0%, 50%, 100% {
+        transform: rotateZ(0deg);
+    }
+
+    25% {
+        transform: rotateY(-30deg);
+    }
+
+    75% {
+        transform: rotateY(30deg);
+    }
+    /*0% {
+        transform: translateX(0);
+    }
+
+    5% {
+        transform: translateY(-50%) translateX(50%);
+    }
+
+    10% {
+        transform: translateY(0) translateX(100%);
+    }
+
+    15% {
+        transform: translateY(-50%) translateX(100%);
+    }
+
+    20% {
+        transform: translateY(0) translateX(100%);
+    }
+
+    25% {
+        transform: translateY(-50%) translateX(50%);
+    }
+
+    30% {
+        transform: translateY(0) translateX(0);
+    }
+
+    35% {
+        transform: translateY(-50%) translateX(-50%);
+    }
+
+    40% {
+        transform: translateY(0) translateX(-100%);
+    }
+
+    45% {
+        transform: translateY(-50%) translateX(-100%);
+    }
+
+    50% {
+        transform: translateY(0) translateX(-100%);
+    }
+
+    55% {
+        transform: translateY(0) translateX(0);
+    }
+
+    65% {
+        transform: rotateY(10deg);
+    }
+
+    75% {
+        transform: rotateY(0deg);
+    }*/
+}
+
+@keyframes stay {
+    0%, 50%, 100% {
+        transform: rotateZ(0deg);
+    }
+
+    25% {
+        transform: rotateZ(-10deg);
+    }
+
+    75% {
+        transform: rotateZ(10deg);
+    }
+}
+
+.animal.playing {
+    animation: play 3s linear infinite;
+}
+
+.animal.walking {
+    animation: walk 5s linear infinite;
+}
+
+.animal.eating {
+    animation: eat 5s linear infinite;
+}
+
+.animal.eating:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 100%;
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.animal.eating.cat:before {
+    background-image: url("../img/fish.png");
+    left: 100%;
+}
+
+.animal.eating.dragon:before {
+    background-image: url("../img/cow.png");
+    width: 77px;
+    height: 47px;
+    transform: scale(-1, 1);
+}
+
+.animal.sleeping:before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    right: 100%;
+    width: 40px;
+    height: 40px;
+    background-image: url("../img/zzz.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: wiggle 2s linear infinite;
+}
+
+.animal.stay {
+    animation: stay 4s linear infinite;
+}
+
+.animal.learning:before {
+    content: '';
+    position: absolute;
+    right: 100%;
+    bottom: 0;
+    width: 80px;
+    height: 100px;
+    background-image: url("../img/book.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.animal.learning:after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 21%;
+    left: 30%;
+    background-image: url("../img/learn.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.animal.learning.dragon:after {
+    left: 3%;
+    top: 23%;
+}
+.animal.learning.poo:after {
+    left: 17%;
+    top: 43%;
+}
+
+
+.animal.washing:before{
+    content: '';
+    position: absolute;
+    width: 135px;
+    height: 100px;
+    background-image: url("../img/bubbles.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: wiggle 2s linear infinite;
+}
+
+.game-zone .animal {
+    align-self: flex-end;
+    justify-content: center;
+}
+
+
