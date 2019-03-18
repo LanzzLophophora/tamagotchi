@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tamagochy</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/display.css">
+    <link rel="stylesheet" href="css/animal.css">
+</head>
+<body>
+    <div class="main">
+        <input type="radio" name="color" class="color-radio" id="purple">
+        <input type="radio" name="color" class="color-radio" id="gray">
+        <input type="radio" name="color" class="color-radio" id="black">
+        <input type="radio" name="color" class="color-radio" id="white" checked>
+        <input type="radio" name="color" class="color-radio" id="red">
+        <div class="game d-flex column">
+            <div class="up-section d-flex">
+                <span class="name-of-game m-0-auto">
+                    Tamagotchi v.1.1
+                </span>
+                <div class="d-flex column">
+                    <span class="m-auto">choose board color</span>
+                    <div class="inputs-group d-flex">
+                        <label for="purple">
+                            <div tab=""></div>
+                        </label>
+                        <label for="gray">
+                            <div></div>
+                        </label>
+                        <label for="black">
+                            <div></div>
+                        </label>
+                        <label for="white">
+                            <div></div>
+                        </label>
+                        <label for="red">
+                            <div></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="display" class="display pos-r">
+                <div id="display_off" class="w-100 h-100 d-flex display-off">
+                    <div id="loader" class="absolute-center d-none">
+                        <div class="spinner">
+                            <div class="bubble-1"></div>
+                            <div class="bubble-2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="named" class="popup-wrapper d-none">
+                    <div class="popup absolute-center column">
+                        <span id="named_text"></span>
+                        <span>Okay let's start!</span>
+                    </div>
+                </div>
+                <div id="unnamed" class="popup-wrapper d-none">
+                    <div class="popup absolute-center column">
+                        <span id="unnamed_text"></span>
+                        <span>Okay let's start!</span>
+                    </div>
+                </div>
+                <div id="check_animal" class="check-animal h-100 d-flex column d-none">
+                    <span id="type_text" class="m-0-auto">
+                        <!--Choose your animal!-->
+                    </span>
+                    <div id="choice" class="choice d-flex">
+                        <label for="cat" class="column">
+                            <div class="circle pos-r">
+                                <input type="radio" name="my-choice" id="cat">
+                                <i class="fas fa-check absolute-center"></i>
+                            </div>
+                            <div class="animal cat"></div>
+                            <span class="m-0-auto">
+                                <big><b><i>Cat</i></b></big>
+                            </span>
+                        </label>
+                        <label for="dragon" class="column">
+                            <div class="circle pos-r">
+                                <input type="radio" name="my-choice" id="dragon">
+                                <i class="fas fa-check absolute-center"></i>
+                            </div>
+                            <div class="animal dragon"></div>
+                            <span class="m-0-auto">
+                                <big><b><i>Dragon</i></b></big>
+                            </span>
+                        </label>
+                        <label for="poo" class="column">
+                            <div  class="circle pos-r">
+                                <input type="radio" name="my-choice" id="poo">
+                                <i class="fas fa-check absolute-center"></i>
+                            </div>
+                            <div class="animal poo"></div>
+                            <span class="m-0-auto">
+                                <big><b><i>Poo...</i></b></big>
+                                Just Poo
+                            </span>
+                        </label>
+                        <div id="popup" class="popup-wrapper d-none">
+                            <div class="absolute-center popup">
+                                <span>Please choose your pet!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input id="name" type="text" class="name-selection d-none" placeholder="Enter pet name...">
+                    <button id="choose" class="btn start">Choose!</button>
+                    <button id="name_ok" class="btn start d-none">OK!</button>
+                    <div id="confirm" class="popup-wrapper d-none">
+                        <div class="absolute-center popup column justify-between">
+                            <span id="type_text_confirm"></span>
+                            <div class="btns-conf d-flex w-100">
+                                <button id="start" class="btn start">Start!</button>
+                                <button id="cancel" class="btn start">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="game_display" class="game-display column h-100 d-flex d-none">
+                    <div class="indicators d-flex column">
+                        <div class="justify-between w-100 d-flex">
+                            <div class="progress-wrap">
+                                <span id="energy" class="progress">Energy</span>
+                            </div>
+                            <div class="progress-wrap">
+                                <span id="mood" class="progress">Mood</span>
+                            </div>
+                            <div class="progress-wrap">
+                                <span id="hygiene" class="progress">Hygiene</span>
+                            </div>
+                        </div>
+                        <div class="down-line d-flex">
+                            <div class="progress-wrap">
+                                <span id="satiety" class="progress">Satiety</span>
+                            </div>
+                            <div class="progress-wrap">
+                                <span id="health" class="progress">Health</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="info" class="info-display"></div>
+                    <div id="game_zone" class="game-zone d-flex h-100 pos-r">
+                        <div id="pet" class="animal m-0-auto stay"></div>
+                    </div>
+                </div>
+                <div id="game_over" class="dead column absolute-center d-flex d-none">
+                    <h1>Game over...</h1>
+                    <span id="reload" class="btn" >Again!</span>
+                </div>
+            </div>
+            <div class="button-place pos-r">
+                <button id="power" class="btn power absolute-center">
+                    <i class="fas fa-power-off"></i>
+                </button>
+                <div id="btn_group" class="btn-group column d-none">
+                    <div class="fun d-flex">
+                        <i class="far fa-smile"></i>
+                        <div class="btn pet-action" id="eat">eat</div>
+                        <div class="btn pet-action" id="walk">walk</div>
+                        <div class="btn pet-action" id="play">play</div>
+                        <div class="btn pet-action" id="caress">caress</div>
+                    </div>
+                    <div class="sad d-flex">
+                        <i class="far fa-frown"></i>
+                        <div class="btn pet-action" id="learn">learn</div>
+                        <div class="btn pet-action" id="sleep">sleep</div>
+                        <div class="btn pet-action" id="wash">wash</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/functions.js"></script>
+    <script src="js/Pet.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
